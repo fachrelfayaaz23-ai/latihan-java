@@ -1,4 +1,5 @@
 package shared;
+
 public class train{
     private String name;
     private String id;
@@ -8,5 +9,8 @@ public class train{
         this.id = id;
     }
     
-    
+    public static void main(String[] args) {
+        train t1 = new train("kereta", "T1");
+        System.out.println(t1);
+    }
 }
