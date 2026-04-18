@@ -12,5 +12,6 @@ public class train{
     public static void main(String[] args) {
         train t1 = new train("kereta", "T1");
         System.out.println(t1);
+        train t2 = new train(null, null);
     }
 }
