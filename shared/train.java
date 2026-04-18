@@ -8,9 +8,5 @@ public class train{
         this.name = name;
         this.id = id;
     }
-    
-    public static void main(String[] args) {
-        train t1 = new train("kereta", "T1");
-        System.out.println(t1);
-    }
+
 }
