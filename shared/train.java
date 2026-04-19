@@ -1,19 +1,24 @@
 package shared;
 
-public class train{
+public class train {
     String name;
     String id;
+    String origin;
+    String destination;
+    String departureTime;
 
-    public train(String name, String id) {
+    public train(String name, String id, String origin, String destination, String departureTime) {
+        this.departureTime = departureTime;
+        this.destination = destination;
         this.name = name;
         this.id = id;
+        this.origin = origin;
     }
-    
-    public static void main(String[] args) {
-        train t1 = new train("kereta", "T1");
-        System.out.println(t1);
-        train t2 = new train(null, null);
+    public String getName(){
+        return this.name;
     }
+   
+        
     
-
+    
 }
