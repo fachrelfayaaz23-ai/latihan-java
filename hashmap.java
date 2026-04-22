@@ -19,7 +19,7 @@ public class hashmap {
 
 class hashesMap{
     entry[] bucket = new entry[10];
-    int index;
+    
 
     int hash(String key){
         return Math.abs(key.hashCode()) % bucket.length;
