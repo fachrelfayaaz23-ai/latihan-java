@@ -14,35 +14,26 @@ public class routeTrainMap {
         entry current = bucket[index];
         
         if (current == null){ //bucket kosong
-            bucket[index] = new entry(key, value);
-            return;
+        bucket[index] = new entry(key, value);
+        return;
         }
-        if (current.key.equals(key)){ 
-            nodeValue temp = current.value;
+        while (current != null){ //kalau currentnya gk kosong
+            if (current.key == key){ // cek keynya pas
+                nodeValue temp = current.value;
                 
-            while (temp.next != null){
-                temp = temp.next;
+                while(temp.next != null){ //valuenya udah paling depan?
+                    temp = temp.next; //maju ampe paling depan
+                }
+                temp.next = new nodeValue(value); //baru tambahin
+                return;
             }
-            temp.next = new nodeValue(value);
-            return;
-        }
-        while (current.key != key){
-            if (current.key.equals(key)){ 
-            nodeValue temp = current.value;
-                
-            while (temp.next != null){
-                temp = temp.next;
+            if (current.next == null){
+                current.next = new entry(key, value);
+                return;
             }
-            temp.next = new nodeValue(value);
-            return;
-        }
-        current = current.next;
-        
-        }
-        while (current.next != null){
             current = current.next;
         }
-        current.next = new entry(key, value);
+        
     }
     
     void listRoute(){
@@ -75,6 +66,7 @@ public class routeTrainMap {
             current = current.next;
         }
         System.out.println("Tidak ada kereta yang berada di jalur ini");
+        
     }
 
     void removeRoute(String key){
