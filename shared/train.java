@@ -17,6 +17,9 @@ public class train {
     public String getName(){
         return this.name;
     }
+   public String getId(){
+    return this.id;
+   }
    
         
     
